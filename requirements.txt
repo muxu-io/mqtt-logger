@@ -1,0 +1,5 @@
+aiohttp
+paho-mqtt
+systemd-python
+pytest
+pytest-asyncio
