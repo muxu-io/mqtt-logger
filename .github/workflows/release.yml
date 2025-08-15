@@ -18,7 +18,7 @@ permissions:
 jobs:
   semantic-release:
     runs-on: ubuntu-latest
-    if: github.ref_type != 'tag' && github.actor != 'github-actions[bot]'
+    if: github.ref_type != 'tag' && github.event.head_commit.author.email != 'semantic-release'
     steps:
       - name: Debug workflow trigger
         run: |
@@ -28,6 +28,9 @@ jobs:
           echo "Ref: ${{ github.ref }}"
           echo "Event name: ${{ github.event_name }}"
           echo "Head commit: ${{ github.event.head_commit.id }}"
+          echo "Commit message: ${{ github.event.head_commit.message }}"
+          echo "Author name: ${{ github.event.head_commit.author.name }}"
+          echo "Author email: ${{ github.event.head_commit.author.email }}"
 
       - name: Checkout
         uses: actions/checkout@v4
