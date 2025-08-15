@@ -17,10 +17,6 @@ permissions:
 jobs:
   semantic-release:
     runs-on: ubuntu-latest
-    outputs:
-      released: ${{ steps.semantic.outputs.released }}
-      version: ${{ steps.semantic.outputs.version }}
-      tag: ${{ steps.semantic.outputs.tag }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
