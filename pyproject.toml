@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "muxu-io-mqtt-logger"
+name = "mqtt-logger"
 version = "0.1.0"
 description = "A logger that logs messages to an MQTT topic."
 authors = ["Alex Gonzalez <alex@muxu.io>"]
@@ -9,6 +9,16 @@ license = "MIT"
 python = "^3.7"
 paho-mqtt = ">=1.6.1"
 systemd-python = "^234"
+muxu-io-mqtt-connector = "*"
+
+[tool.poetry.group.dev.dependencies]
+pytest = ">=7.0.0"
+pytest-cov = ">=4.0.0"
+pytest-asyncio = ">=0.21.0"
+black = ">=23.0.0"
+ruff = ">=0.1.0"
+bandit = {extras = ["toml"], version = ">=1.7.0"}
+pip-audit = ">=2.6.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
@@ -22,6 +32,8 @@ include = '\.pyi?$'
 [tool.ruff]
 target-version = "py38"
 line-length = 88
+
+[tool.ruff.lint]
 select = [
     "E",  # pycodestyle errors
     "W",  # pycodestyle warnings
@@ -33,7 +45,7 @@ select = [
 ]
 ignore = []
 
-[tool.ruff.per-file-ignores]
+[tool.ruff.lint.per-file-ignores]
 "tests/*" = ["E501"]
 
 [tool.pytest.ini_options]
