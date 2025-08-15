@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v1.2.4 (2025-08-15)
+
+### Bug Fixes
+
+- Configure semantic-release not to create tag commits
+  ([`68ebe3d`](https://github.com/muxu-io/mqtt-logger/commit/68ebe3d67286fbd28023e076784e99380895c177))
+
+
 ## v1.2.3 (2025-08-15)
 
 ### Bug Fixes
