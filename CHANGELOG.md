@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v1.2.0 (2025-08-15)
+
+### Features
+
+- Avoid workflow duplication
+  ([`b4220ab`](https://github.com/muxu-io/mqtt-logger/commit/b4220abf6b7a4dcb83bc0726aa7f0f19c9efd0ab))
+
+
 ## v1.1.0 (2025-08-15)
 
 ### Features
