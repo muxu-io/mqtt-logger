@@ -6,10 +6,6 @@ on:
     branches: [master, main, maint]
   workflow_dispatch:
 
-concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
-
 jobs:
   commit-check:
     runs-on: ubuntu-latest
