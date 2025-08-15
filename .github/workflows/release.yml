@@ -18,8 +18,17 @@ permissions:
 jobs:
   semantic-release:
     runs-on: ubuntu-latest
-    if: github.ref_type != 'tag'
+    if: github.ref_type != 'tag' && github.actor != 'github-actions[bot]'
     steps:
+      - name: Debug workflow trigger
+        run: |
+          echo "🔍 Workflow trigger details:"
+          echo "Ref type: ${{ github.ref_type }}"
+          echo "Actor: ${{ github.actor }}"
+          echo "Ref: ${{ github.ref }}"
+          echo "Event name: ${{ github.event_name }}"
+          echo "Head commit: ${{ github.event.head_commit.id }}"
+
       - name: Checkout
         uses: actions/checkout@v4
         with:
