@@ -44,7 +44,7 @@ To install the MQTT Logger package, you can use pip:
 pip install .
 ```
 
-Note: This package depends on the `mqtt-connector` package and requires systemd to be available.
+Note: This package depends on the `muxu-io-mqtt-connector` PyPI package and requires systemd to be available.
 
 Make sure to run this command in the root directory of the project where the `setup.py` file is located.
 

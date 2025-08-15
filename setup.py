@@ -13,6 +13,7 @@ setup(
     package_dir={"": "src"},
     install_requires=[
         "paho-mqtt>=1.6.1",
+        "muxu-io-mqtt-connector",
     ],
     extras_require={
         "systemd": ["systemd-python>=234"],
