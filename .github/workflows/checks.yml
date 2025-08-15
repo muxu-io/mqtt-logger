@@ -1,4 +1,5 @@
-name: Default
+name: Checks
+run-name: Checks
 
 on:
   pull_request:
