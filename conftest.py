@@ -1,7 +1,7 @@
 """Pytest configuration file to set up the test environment."""
 
-import sys
 import os
+import sys
 
 # Add the src directory to Python path so tests can import mqtt_logger
 src_path = os.path.join(os.path.dirname(__file__), "src")

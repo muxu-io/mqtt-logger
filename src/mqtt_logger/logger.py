@@ -37,10 +37,12 @@ class MqttLogger:
             mqtt_broker (str): The MQTT broker's address.
             mqtt_port (int): The MQTT broker's port.
             mqtt_topic (str): The MQTT topic for logging.
-            log_file (str, optional): Path to the log file. If None, file logging is disabled.
+            log_file (str, optional): Path to the log file. If None, file logging
+                is disabled.
             log_level (int): The log level (e.g., logging.INFO, logging.DEBUG).
             reconnect_interval (int): Seconds between reconnection attempts.
-            max_reconnect_attempts (int): Maximum reconnection attempts (-1 for infinite).
+            max_reconnect_attempts (int): Maximum reconnection attempts
+                (-1 for infinite).
             throttle_interval (float): Minimum seconds between MQTT publishes.
             service_name (str, optional): Service name for structured logging.
             batch_size (int): Maximum batch size before auto-flush.
@@ -331,8 +333,8 @@ class MqttLogger:
         Args:
             logger_instance: The MqttLogger instance to register the shutdown hook for.
         """
-        import atexit
         import asyncio
+        import atexit
 
         async def _shutdown():
             await logger_instance.shutdown()
@@ -352,7 +354,8 @@ class MqttLogger:
 
         Environment variables are read using the specified prefix.
         Available variables:
-        - {PREFIX}LOG_FILE: Path to the log file (if not provided, file logging is disabled)
+        - {PREFIX}LOG_FILE: Path to the log file (if not provided, file logging
+            is disabled)
         - {PREFIX}MQTT_BROKER: MQTT broker address
         - {PREFIX}MQTT_PORT: MQTT broker port
         - {PREFIX}MQTT_TOPIC: MQTT topic for logs
@@ -545,12 +548,14 @@ class MqttLogger:
         if force_reconnect and self.is_connected():
             await self.mqtt_connector.disconnect()
 
-        # Log connection attempt if stdout is enabled - this prints immediately before any network operations
+        # Log connection attempt if stdout is enabled - this prints immediately
+        # before any network operations
         if self.enable_stdout:
             import sys
 
             print(
-                f"[INFO] MqttLogger: Attempting to connect to {self.mqtt_broker}: {self.mqtt_port}",
+                f"[INFO] MqttLogger: Attempting to connect to "
+                f"{self.mqtt_broker}: {self.mqtt_port}",
                 file=sys.stderr,
             )
             sys.stderr.flush()  # Ensure immediate output
@@ -657,7 +662,8 @@ class MqttLogger:
         # Add structured data if provided
         if data:
             for key, value in data.items():
-                # Systemd journal field names must be uppercase and contain only alphanumeric and underscore
+                # Systemd journal field names must be uppercase and contain only
+                # alphanumeric and underscore
                 field_name = f"DATA_{key.upper().replace('-', '_').replace('.', '_')}"
                 journal_fields[field_name] = str(value)
 

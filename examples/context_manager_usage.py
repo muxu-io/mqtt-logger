@@ -1,6 +1,7 @@
 # filepath: /mqtt-logger/mqtt-logger/examples/context_manager_usage.py
 
 import asyncio
+
 from mqtt_logger import MqttLogger
 
 
