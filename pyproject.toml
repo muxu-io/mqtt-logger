@@ -66,6 +66,7 @@ version_toml = ["pyproject.toml:tool.poetry.version"]
 version_variable = ["src/mqtt_logger/__init__.py:__version__"]
 build_command = "python -m build"
 upload_to_vcs_release = true
+commit = false
 
 [tool.semantic_release.commit_parser_options]
 allowed_tags = ["build", "chore", "ci", "docs", "feat", "fix", "perf", "style", "refactor", "test"]
