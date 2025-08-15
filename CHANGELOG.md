@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v1.2.6 (2025-08-15)
+
+### Bug Fixes
+
+- Document the CI/CD pipeline
+  ([`89f4423`](https://github.com/muxu-io/mqtt-logger/commit/89f4423196e772efa0b5fcfdffb0c8963054ac77))
+
+
 ## v1.2.5 (2025-08-15)
 
 ### Bug Fixes
