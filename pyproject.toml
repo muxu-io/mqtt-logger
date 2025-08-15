@@ -1,9 +1,10 @@
 [tool.poetry]
-name = "mqtt-logger"
+name = "muxu-io-mqtt-logger"
 version = "1.2.5"
 description = "A logger that logs messages to an MQTT topic."
 authors = ["Alex Gonzalez <alex@muxu.io>"]
 license = "MIT"
+packages = [{include = "mqtt_logger", from = "src"}]
 
 [tool.poetry.dependencies]
 python = "^3.7"
