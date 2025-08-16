@@ -2,6 +2,17 @@
 
 <!-- version list -->
 
+## v1.2.8 (2025-08-16)
+
+### Bug Fixes
+
+- Pyproject.toml: use standard format
+  ([`8d010e0`](https://github.com/muxu-io/mqtt-logger/commit/8d010e0ac4b2e30c5906ce430b36bef1fdf9d3a7))
+
+- Use version from pyproject
+  ([`f91ff75`](https://github.com/muxu-io/mqtt-logger/commit/f91ff7566d2c72af08913a428f9fb8b0258aa8fd))
+
+
 ## v1.2.7 (2025-08-16)
 
 ### Bug Fixes

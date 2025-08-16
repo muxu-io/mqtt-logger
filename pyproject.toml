@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "muxu-io-mqtt-logger"
-version = "1.2.7"
+version = "1.2.8"
 description = "A logger that logs messages to an MQTT topic with systemd journal integration"
 authors = [
     {name = "Alex Gonzalez", email = "alex@muxu.io"}
