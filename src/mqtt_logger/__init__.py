@@ -3,7 +3,12 @@
 
 from .logger import MqttLogger
 
-__version__ = "1.0.0"
+try:
+    import importlib.metadata
+
+    __version__ = importlib.metadata.version("muxu-io-mqtt-logger")
+except (importlib.metadata.PackageNotFoundError, ImportError):
+    __version__ = "unknown"
 __author__ = "Alex Gonzalez"
 __email__ = "alex@muxu.io"
 __description__ = "MQTT-enabled logging with systemd journal integration"
