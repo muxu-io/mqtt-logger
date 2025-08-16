@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v1.2.9 (2025-08-16)
+
+### Bug Fixes
+
+- Update dependencies
+  ([`c255425`](https://github.com/muxu-io/mqtt-logger/commit/c2554259e05d017a3619b351eec6b7857e7cc643))
+
+
 ## v1.2.8 (2025-08-16)
 
 ### Bug Fixes
