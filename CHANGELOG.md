@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v1.2.7 (2025-08-16)
+
+### Bug Fixes
+
+- Print version information at startup
+  ([`7dd2c7e`](https://github.com/muxu-io/mqtt-logger/commit/7dd2c7ef48719548bcf375b1bc20018aa405666b))
+
+
 ## v1.2.6 (2025-08-15)
 
 ### Bug Fixes
