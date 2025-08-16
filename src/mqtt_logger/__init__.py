@@ -3,4 +3,10 @@
 
 from .logger import MqttLogger
 
-__all__ = ["MqttLogger"]
+__version__ = "1.0.0"
+__author__ = "Alex Gonzalez"
+__email__ = "alex@muxu.io"
+__description__ = "MQTT-enabled logging with systemd journal integration"
+__license__ = "MIT"
+
+__all__ = ["MqttLogger", "__version__"]

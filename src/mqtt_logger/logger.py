@@ -715,6 +715,11 @@ class MqttLogger:
 
     async def __aenter__(self) -> "MqttLogger":
         """Async context manager entry."""
+        # Print version information on startup
+        from . import __version__
+
+        self.info(f"MqttLogger v{__version__} starting...")
+
         await self.connect_mqtt()
         return self
 
