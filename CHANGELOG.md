@@ -2,6 +2,25 @@
 
 <!-- version list -->
 
+## v1.3.0 (2025-08-17)
+
+### Bug Fixes
+
+- **ci**: Move commitlint configuration to .github
+  ([`7027ca5`](https://github.com/muxu-io/mqtt-logger/commit/7027ca5d3a1871666c6b556d4a5ac0d1b9f0b5d2))
+
+- **ci**: Move mosquitto configuration to .github
+  ([`5a81639`](https://github.com/muxu-io/mqtt-logger/commit/5a816395e7c4d0488b01b36dad481292a24bf28b))
+
+- **ci**: Pass dockerhub credentials
+  ([`a226729`](https://github.com/muxu-io/mqtt-logger/commit/a226729c3a5a38279b0e743c81f075c29e37601e))
+
+### Features
+
+- **ci**: Use reusable workflows
+  ([`dfd1841`](https://github.com/muxu-io/mqtt-logger/commit/dfd1841d16bf0fb15af872a5e835da6c8978c815))
+
+
 ## v1.2.9 (2025-08-16)
 
 ### Bug Fixes
