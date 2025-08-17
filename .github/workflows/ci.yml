@@ -1,31 +1,40 @@
-name: CI
+name: CI/CD
+run-name: ${{ github.event_name == 'pull_request' && 'Checks' || 'Release' }}
 on:
   push:
+    branches: [master, main, 'maint/**']
   pull_request:
   workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
 
 permissions:
   contents: write
   packages: write
   id-token: write
+  statuses: write
 
 jobs:
   checks:
+    if: github.event_name == 'pull_request'
     uses: muxu-io/python-template/.github/workflows/checks.yml@master
     with:
       python-versions: '["3.9", "3.10", "3.11", "3.12"]'
       source-directory: 'src/'
       enable-mqtt-broker: true
-      mqtt-config-path: '.ci/mosquitto.conf'
+      mqtt-config-path: '.github/mosquitto.conf'
 
   release:
-    if: github.ref == 'refs/heads/master' && github.event_name == 'push'
-    needs: checks
+    if: github.event_name == 'push' && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/heads/maint/')) && github.ref_type != 'tag' && github.event.head_commit.author.email != 'semantic-release'
     uses: muxu-io/python-template/.github/workflows/release.yml@master
     secrets:
       SEMANTIC_RELEASE_ADMIN_TOKEN: ${{ secrets.SEMANTIC_RELEASE_ADMIN_TOKEN }}
 
   publish:
-    if: needs.release.outputs.released == 'true'
-    needs: [checks, release]
-    uses: muxu-io/python-template/.github/workflows/publish.yml@master
+    if: github.event_name == 'push' && needs.release.outputs.released == 'true'
+    needs: [release]
+    uses: ./.github/workflows/pypi-publish.yml
+    with:
+      version: ${{ needs.release.outputs.version }}
